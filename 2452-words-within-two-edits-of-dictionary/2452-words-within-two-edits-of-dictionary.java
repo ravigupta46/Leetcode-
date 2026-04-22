@@ -10,14 +10,14 @@ class Solution {
                 int count=0;
                 while(k<key.length()){
                     if(key.charAt(k)!=key2.charAt(k)){
-                        if(count>2) break;
+                
                         count++;
                     }
                     k++;
                 }
                 if(count<=2){
                     ans.add(key);
-                    break;
+                  break;
                 }
             }
         }
