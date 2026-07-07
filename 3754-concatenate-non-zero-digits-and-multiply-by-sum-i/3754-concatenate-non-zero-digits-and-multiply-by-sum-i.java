@@ -12,11 +12,13 @@ class Solution {
 
             n = n / 10;
         }
-        String s = String.valueOf(num);
-        StringBuilder sb = new StringBuilder(s);
-        sb.reverse();
-        long dig = Integer.parseInt(sb.toString());
+        long dig=0;
 
+        while(num>0){
+            long rem=num%10;
+            dig=dig*10+rem;
+            num=num/10;
+        }
         return dig * sum;
     }
 }
