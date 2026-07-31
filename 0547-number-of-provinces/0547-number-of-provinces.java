@@ -20,10 +20,10 @@ class Solution {
 
         while(q.size()>0){
             int fr=q.poll();
-            visited[fr]=true;
+           
             for(int j=0;j<n;j++){
                 if(visited[j]==false && adj[fr][j]==1){
-                    
+                    visited[fr]=true;
                     q.offer(j);
                 }
             }
