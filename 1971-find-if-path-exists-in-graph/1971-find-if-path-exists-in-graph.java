@@ -14,10 +14,10 @@ class Solution {
         }
         boolean[] vis=new boolean[n];
         vis[start]=true;
-        bfs(start,adj,vis);
+        bfs(start,adj,vis,destination);
         return vis[destination];
     }
-    public void bfs(int start,List<List<Integer>> adj,boolean[] vis){
+    public void bfs(int start,List<List<Integer>> adj,boolean[] vis,int destination){
         Queue<Integer> q=new LinkedList<>();
         q.offer(start);
         while(!q.isEmpty()){
@@ -26,6 +26,7 @@ class Solution {
                 if(vis[e]==false){
                     vis[e]=true;
                     q.add(e);
+                    if(e==destination) return;
                 }
 
             }
