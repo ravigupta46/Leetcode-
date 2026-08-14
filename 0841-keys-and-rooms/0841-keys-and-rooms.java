@@ -3,7 +3,8 @@ class Solution {
         int n=adj.size();
         boolean[] vis=new boolean[n];
         vis[0]=true;
-        bfs(0,vis,adj);
+       // bfs(0,vis,adj);
+       dfs(0,vis,adj);
         for(boolean e:vis){
             if(e==false) return false;
         }
@@ -25,5 +26,15 @@ class Solution {
             }
         }
 
+
+    }
+
+    public void dfs(int start,boolean[] vis,List<List<Integer>> adj){
+        vis[start]=true;
+        for(int ele:adj.get(start)){
+            if(vis[ele]!=true){
+                dfs(ele,vis,adj);
+            }
+        }
     }
 }
