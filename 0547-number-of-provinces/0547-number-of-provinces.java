@@ -5,6 +5,7 @@ class Solution {
         boolean[] visited=new boolean[n];
         for(int i=0;i<n;i++){
             if(!visited[i]){
+                //dfs(i,visited,adj);
                 bfs(i,visited,adj);
                 count++;
             }
@@ -23,10 +24,13 @@ class Solution {
            
             for(int j=0;j<n;j++){
                 if(visited[j]==false && adj[fr][j]==1){
-                    visited[fr]=true;
+                    visited[j]=true;
                     q.offer(j);
                 }
             }
         }
+
     }
+
+   
 }
