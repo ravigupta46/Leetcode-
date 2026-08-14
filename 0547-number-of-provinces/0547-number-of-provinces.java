@@ -5,8 +5,8 @@ class Solution {
         boolean[] visited=new boolean[n];
         for(int i=0;i<n;i++){
             if(!visited[i]){
-                //dfs(i,visited,adj);
-                bfs(i,visited,adj);
+                dfs(i,visited,adj);
+               // bfs(i,visited,adj);
                 count++;
             }
         }
@@ -32,5 +32,16 @@ class Solution {
 
     }
 
-   
+    public void dfs(int start,boolean[] vis,int[][] adj){
+        vis[start]=true;
+
+            for(int j=0;j<adj[0].length;j++){
+                if(adj[start][j]==1 && vis[j]==false){
+                    vis[j]=true;
+                    dfs(j,vis,adj);
+
+                }
+            }
+        
+    }
 }
